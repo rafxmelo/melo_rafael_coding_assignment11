@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: melo_rafael_coding_assignment11
+    image: melo_rafael_coding_assignment11
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - './:/melo_rafael_site'
+      - '/melo_rafael_site/node_modules'
+    ports:
+      - 7775:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
